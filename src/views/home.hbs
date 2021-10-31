@@ -1,0 +1,70 @@
+<div class="container p-3 ">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Welcome {{user.username}}</h3>
+                    <div> 
+                    <form action="/home/{{id}}">
+                      <select name="type" class="form-control">
+                        <option >The last 10</option>
+                        <option >Income/Expense</option>
+                        <option ></option>
+                        <option ></option>
+                      </select>
+                        <button class="btn btn-success btn-block">
+                         Ordenar
+                      </button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+<div class="container p-3 ">
+    <div class="row"> 
+      <div class="col-md-12 mx-auto">
+        <div class="table-responsive ">
+            <table class="table table-hover">
+               <thead>
+                <tr>
+                 <th scope="col">#</th>
+                 <th scope="col">Concept</th>
+                 <th scope="col">Type</th>
+                 <th scope="col">Amount</th>
+                 <th scope="col">Category</th>
+                 <th scope="col">Description</th>
+                 <th scope="col">Date</th>
+                 <th scope="col">Action</th>
+                </tr>
+              </tbody>
+          {{#each links}}
+               <tr>
+                  <th scope="row"></th>
+                  <td>{{concept}}</td>
+                  <td>{{type}}</td>
+                  <td>{{amount}}</td>
+                  <td>{{category}}</td>
+                  <td>{{description}}</td>
+                  <td>{{created_at}}</td>
+                  <td class="text-end">
+        <a href="/edit/{{id}}" type="button" class="btn btn-dark btn-small"><i></i>
+          Edit</a>
+        <a href="/delete/{{id}}" type="button" class="btn btn-light btn-small"><i></i> Delete</a>
+          </td>
+         </tr>
+        {{else}}
+        <div class="row"> 
+         <div class="col-md-3 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are nothing saved yet.</p>
+                <a href="/add">Create One!</a>
+            </div>
+        </div>
+        </div>
+        {{/each}}
+        </table>
+      </div>
+   </div>
+</div>

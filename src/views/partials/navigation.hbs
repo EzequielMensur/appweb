@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container nav nav-tabs">
+    <a class="navbar-brand" href="/">
+      <i class="fa fa-handshake"></i>
+      Private matters solutions
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/add">Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          <div class="input-group">
+            <div class="form-outline">
+              <input
+                class="typeahead form-control"
+                type="text"
+                placeholder="Search Name...."
+              />
+            </div>
+            <button id="search-button" type="button" class="btn btn-primary">
+              <i class="fas fa-search fa-lg"></i>
+            </button>
+          </div>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/signin">SignIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">SignUp</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
